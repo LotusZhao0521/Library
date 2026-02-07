@@ -1,0 +1,71 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.venv/
+*.db
+
+# =========================
+# Node.js
+# =========================
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# =========================
+# Environment & Secrets
+# =========================
+.env
+.env.*
+!.env.example
+backend/.env
+backend/*.db
+
+# =========================
+# IDE & Editor
+# =========================
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+
+# =========================
+# OS
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Misc
+# =========================
+*.bak
+*.tmp
+.cursor/
+.agents/

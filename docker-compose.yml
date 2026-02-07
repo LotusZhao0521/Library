@@ -1,0 +1,22 @@
+services:
+  backend:
+    build: ./backend
+    container_name: library-backend
+    env_file: ./backend/.env
+    volumes:
+      - db-data:/app/data
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:///./data/library.db
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: library-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  db-data:
