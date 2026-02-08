@@ -24,6 +24,8 @@ services:
       - BACKEND_PORT=${PORT:-8000}
       - FRONTEND_PORT=${FRONTEND_PORT:-80}
       - FRONTEND_DOMAIN=${FRONTEND_DOMAIN:-_}
+    env_file:
+      - .env
     depends_on:
       - backend
     restart: unless-stopped
