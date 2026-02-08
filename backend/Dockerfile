@@ -17,6 +17,9 @@ COPY app/ app/
 # Sync again to finalize
 RUN uv sync --frozen --no-dev
 
+# 创建数据目录（用于 SQLite 数据库持久化）
+RUN mkdir -p /app/data
+
 # 默认 8000，可通过环境变量 PORT 覆盖
 ENV PORT=8000
 EXPOSE 8000
