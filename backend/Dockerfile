@@ -17,6 +17,9 @@ COPY app/ app/
 # Sync again to finalize
 RUN uv sync --frozen --no-dev
 
+# 默认 8000，可通过环境变量 PORT 覆盖
+ENV PORT=8000
 EXPOSE 8000
 
-CMD ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# 使用 shell 形式以支持 $PORT
+CMD uv run uvicorn app.main:app --host 0.0.0.0 --port ${PORT}

@@ -2,7 +2,7 @@
 name = "backend"
 version = "0.1.0"
 description = "图书管理系统后端 API"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
     "aiosqlite>=0.22.1",
     "bcrypt>=5.0.0",
