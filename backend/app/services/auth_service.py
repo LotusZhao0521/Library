@@ -22,6 +22,10 @@ class AuthService:
     ) -> None:
         existing = await user_repository.get_by_username(db, username)
         if existing:
+            # 如果用户已存在，更新密码以确保配置中的密码生效
+            existing.hashed_password = get_password_hash(password)
+            existing.role = "admin"  # 确保角色是 admin
+            await user_repository.update(db, existing)
             return
         admin = User(
             username=username,

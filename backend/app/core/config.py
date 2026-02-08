@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite+aiosqlite:///./library.db"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 24 hours
 
-    model_config = {"env_file": ".env"}
+    model_config = {"env_file": ".env", "extra": "ignore"}
 
 
 @lru_cache
